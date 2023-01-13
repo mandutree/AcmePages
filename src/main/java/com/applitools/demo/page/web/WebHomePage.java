@@ -10,6 +10,7 @@ import com.applitools.demo.component.web.WebLeftNav;
 import com.applitools.demo.component.web.WebOverview;
 import com.applitools.demo.component.web.WebTransactions;
 import com.applitools.demo.page.catalog.HomePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class WebHomePage extends Page implements HomePage {
@@ -35,5 +36,15 @@ public class WebHomePage extends Page implements HomePage {
     @Override
     public LeftNav leftNav() {
         return new WebLeftNav(this.driver, "//div[contains(@class,'menu-w')]");
+    }
+
+    @Override
+    public void clickAddAccount() {
+        click(new By.ByXPath("//a[contains(@class,'btn-primary')]"));
+    }
+
+    @Override
+    public void clickMakePayment() {
+        click(new By.ByXPath("//a[contains(@class,'btn-success')]"));
     }
 }

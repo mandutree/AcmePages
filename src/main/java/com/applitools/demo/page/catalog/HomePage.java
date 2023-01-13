@@ -13,6 +13,8 @@ public interface HomePage {
     Overview financialOverview();
     HeaderBar headerBar();
     LeftNav leftNav();
+    void clickAddAccount();
+    void clickMakePayment();
 
     static HomePage create(WebDriver driver, PageType type) {
         switch (type) {
