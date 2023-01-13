@@ -3,23 +3,22 @@ package com.applitools.demo
 
 import com.applitools.demo.page.catalog.HomePage;
 import com.applitools.demo.page.catalog.LoginPage;
-import com.applitools.demo.page.common.PageType;
 import org.openqa.selenium.WebDriver;
 
 public class AcmeCatalog {
     private final WebDriver driver;
-    private final PageType pageType;
+    private final ClientType clientType;
 
-    public AcmeCatalog(WebDriver driver, PageType type) {
+    public AcmeCatalog(WebDriver driver, ClientType clientType) {
         this.driver = driver;
-        this.pageType = type;
+        this.clientType = clientType;
     }
 
     public LoginPage loginPage() {
-        return LoginPage.create(driver, pageType);
+        return LoginPage.create(driver, clientType);
     }
 
     public HomePage homePage() {
-        return HomePage.create(driver, pageType);
+        return HomePage.create(driver, clientType);
     }
 }
