@@ -32,5 +32,7 @@ different implementations.  One for each client.  During the initial constructio
 client and construct the appropriate page for that client.  This information can trickle down to the components, so that
 we create the client specific components as well.
 
-This is what this package attempts to do.  Because this application only exists on a browser, there is only one
-implementation of the pages and components.
+That is what this package attempts to do.  Because this application currently exists only on a browser, there is only
+one implementation of the pages and components.  In the future, when this application becomes available on multiple
+clients, the code can be extended without altering the existing logic of the browser implementation.  This ensures that
+existing browser tests will not be affected by the introduction of the new client.
