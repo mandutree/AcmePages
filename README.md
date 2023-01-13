@@ -8,8 +8,7 @@ package for additional details.
 
 ## Catalog
 Catalog is an entry point which can be used to access any objects and their functionalities on any page.  It is
-analogous to a phone book.  Like a good phone book, the pages and objects are organized into logical order.  In order
-to interact with any object on a page, you first need to understand which page the object is located in.
+analogous to a phone book.  Like a good phone book, the pages and objects are organized into logical order.
 
 The [Home page](https://demo.applitools.com/app.html) of ACME website contains several stock and company information in
 a table.  Let's say we are looking to get the trade status for Starbucks.  In order to get this data, we first need
@@ -18,6 +17,13 @@ by looking at the Recent Transaction table.  In that table we are interested on 
 coffee. Then finally, we want to get the status of that row.  The catalog supports this exact way of thinking.
 
     catalog.homePage().recentTransactions().grid().rowByDescription("Starbucks coffee").status();
+
+In this way, anyone with familiarity of the website can look at this code and understand exactly what it is doing.
+Furthermore, any modern day IDE contains IntelliSense that will help you identify the available options in an object.
+eg. By by entering "." after the ***grid().***, the IntelliSense will indicate that there are 2 ways to identify the
+row. By index or description.  In this way, creating tests can become easier.
+
+See [AcmeTests](https://github.com/mandutree/AcmeTests) package for example tests.
 
 ## Client Agnostic
 Often times, the UI is very similar between various clients.  eg, a Home page on a browser may look very similar to an
